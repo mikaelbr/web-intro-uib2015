@@ -21,14 +21,10 @@ class: agenda
 
 # Del 2: HTML, CSS og JavaScript
 
-* Bak kulissene
 * HTML: Innhold
 * CSS: Design
 * JavaScript: Oppførsel
 * Web and Beyond
-
----
-class: middle center
 
 ---
 class: middle center
@@ -72,6 +68,7 @@ background-image: url(assets/google.png)
 class: middle center
 
 ???
+
 Da Google kom, kanskje først for fullt rundt 1998, ble det plutselig mulig å skikkelig kunne søke på nettet etter innhold. Starten på informasjonsalderen der vi kunne ha all slags mulig "redaktørstyrt" innhold.  
 
 ---
@@ -138,7 +135,9 @@ background-image: url(assets/janetjackson.jpg)
 
 ???
 
-I 2004, gjorde Janet Jackson og Justin Timberlake et stort stunt på Super Bowl. Etter over å frustrere seg over at det ikke var mulig å finne videoen noe sted, bestemte Hurley, Chen og Karin seg for å lage YouTube.
+I 2004, gjorde Janet Jackson og Justin Timberlake et stort stunt på Super Bowl. En så stor kontrovers at etter dette blir alle live-sendinger satt med en delay på 5 sekunder for å kunne kontrollere slik.
+
+Etter over å frustrere seg over at det ikke var mulig å finne videoen noe sted, bestemte Hurley, Chen og Karin seg for å lage YouTube.
 
 ---
 background-image: url(assets/first-youtube.png)
@@ -161,7 +160,7 @@ background-image: url(assets/first-iphone.jpg)
 
 ???
 
-Mot 2007, skjedde det noe annet stort. Vi fikk skikkelig fungerende smart-telefoner. I alle fall starten på en fungerende smartphone. I utgangspunktet var det f.eks ikke en App Store. Tanken var at det skulle være web-apps på alt. Man skulle kun bruke weben til å gjøre alt man trengte. Men behovet kom for å ha mer native apps og App Storen ble født.
+Mot 2007, skjedde det noe annet stort. Vi fikk skikkelig fungerende smart-telefoner. I alle fall starten på en fungerende smartphone. I utgangspunktet var det f.eks ikke en App Store. Tanken var at det skulle være web-apps på alt. Man skulle kun bruke weben til å gjøre alt man trengte. Men behovet kom for å ha mer native apps og App Storen ble født. Men det betyr ikke at Web-teknologi ikke blir brukt til de.
 
 ---
 class: middle center
@@ -312,30 +311,31 @@ background-image: url(assets/yr.png)
 
 ???
 
-Så f.eks, om Yr skal hente ut været. Går den egentlig inn på en nett-addresse i bakgrunnen, som henter ut et format som dataen kan lese og lage et grensesnitt ut av.
+Så f.eks, om Yr skal hente ut været. Går den egentlig inn på en nettaddresse i bakgrunnen, som henter ut et format som dataen kan lese og lage et grensesnitt ut av.
 
 ---
 
 ```
-http://www.yr.no/sted/Norway/S%C3%B8r-Tr%C3%B8ndelag/Trondheim/Trondheim/varsel.xml
+http://www.yr.no/place/Norway/Hordaland/Bergen/Bergen/varsel.xml
 ```
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <weatherdata>
   <location>
-    <name>Trondheim</name>
-    <type>By</type>
-    <country>Norge</country>
+    <name>Bergen</name>
+    <type>City - large town</type>
+    <country>Norway</country>
     <timezone id="Europe/Oslo" utcoffsetMinutes="120" />
-    <location altitude="8" latitude="63.4304873907371" longitude="10.3950612843065" geobase="ssr" geobaseid="211102" />
+    <location altitude="54" latitude="60.3982548886088" longitude="5.3290477619655" geobase="ssr" geobaseid="92416" />
   </location>
+  <sun rise="2015-09-07T06:46:00" set="2015-09-07T20:26:02" />
   <forecast>
     <text>
-      <location name="Trondheim">
-        <time from="2015-08-16" to="2015-08-16">
-          <title>søndag</title>
-          <body>&lt;strong&gt;Trøndelag:&lt;/strong&gt; Søraust bris, frisk bris utsatte steder. Pent vær.</body>
+      <location name="Bergen">
+        <time from="2015-09-07" to="2015-09-07">
+          <title>Monday</title>
+          <body>&lt;strong&gt;Hordaland:&lt;/strong&gt; Nordlig frisk bris på kysten. Utrygt for litt regn i ytre strøk, ellers for det meste pent vær.</body>
         </time>
 ```
 
@@ -348,7 +348,7 @@ background-image: url(assets/facebook-app.png)
 
 ???
 
-Det samme skjer når man f.eks trykker "Like" på Facebook App-en. Facebook går i bakrunnen og åpner en side, som gjør den handlingen man ønsker.
+Det samme skjer når man f.eks trykker "Like" på Facebook App-en. Facebook går i bakgrunnen og åpner en side, som gjør den handlingen man ønsker.
 
 
 ---
@@ -396,13 +396,17 @@ POST http://api.some-funrun-page.com/coordinates/game-id/12f938abc321adf
 { "message": "ok" }
 ```
 
+???
+Egenltig, i Fun Runs tilfelle vil det nok være krav til veldig mange requests i
+sekundet, så der er det mulig de bruker en lavere nivås protokoll, f.eks TCP eller UDP
+avhengig av om de vil ha bekreftelse på om requesten kom igjennom.
+
 ---
 
 class: agenda
 
 # Del 2: HTML, CSS og JavaScript
 
- * Bak kulissene
  * HTML: Innhold
  * CSS: Design
  * JavaScript: Oppførsel
@@ -542,7 +546,7 @@ Ikke relatert til «Java»
 ```js
 var hello = 'Hello, ';
 var name = 'UIB';
-var helloAbakus = hello + name; //> 'Hello, UIB'
+var helloUib = hello + name; //> 'Hello, UIB'
 ```
 
 ---
@@ -616,6 +620,16 @@ var add = function (point) {
 add(myPoint); //> 42
 ```
 
+---
+# JavaScript
+
+Også for spesielt interesserte: Dekonstruere objekter
+
+```js
+var add = ({x, y}) => x + y;
+add({ x: 40, y: 2 }); //> 42
+```
+
 
 ---
 # JavaScript
@@ -631,6 +645,7 @@ Vi kan hente det ut i Javascript:
 ```js
 // Samme selectorer som i CSS
 var myImage = document.querySelector('#my-image');
+// flere bilder: document.querySelectorAll('.my-images');
 
 // Endre kilde til bilde
 myImage.src = 'assets/dance.gif';
@@ -688,13 +703,30 @@ sum; //> 21
 
 # Javascript: Lister
 
+Mer idiomatisk måte: Redusering
+
+
 ```js
 var listOfNumbers = [5, 4, 3, 4, 5];
 
-var sum = listOfNumbers.reduce(function (acc, number) {
-  return acc + number;
-});
+var sum = listOfNumbers.reduce((acc, number) => acc + number);
 sum; //> 21
+```
+
+---
+
+# Javascript: Lister
+
+JavaScript er dynamisk. Så lister kan være hva som helst
+
+
+```js
+var listOfNumbers = [5, '4', 3, { x: 3 }, true, [1, 2, 3]];
+
+var sum = listOfNumbers
+  .filter(n => typeof n === 'number')
+  .reduce((acc, number) => acc + number);
+sum; //> 8
 ```
 
 ---
@@ -736,7 +768,7 @@ class: middle center
 
 # Oppsumert
 
-* HTTP — transport
+* HTTP – transport
 * HTML – Innhold
 * CSS – Design
 * JavaScript – Oppførsel
