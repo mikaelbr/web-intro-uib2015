@@ -38,6 +38,13 @@ class: middle center
 Hastigheter var typisk rundt 28 kbps eller 56 kbps. Etterhvert var det noen heldige som hadde ISDN og kunne bruke dobbel linje for å øke det til 128 kbps! Det kunne bety en vanlig MP3 sang på rundt 5 minutter. Som var veldig, veldig raskt. Jeg husket jeg lå på rundt nedlastingshastighet på 6 KB/s. Som gjorde at om alle planeter lå på linje, kunne jeg laste ned en sang på rundt 12 minutter.
 
 ---
+background-image: url(assets/powerrangers.jpg)
+
+???
+
+Og BAM! Så kunne man surfe på en Power Rangers fanside!
+
+---
 background-image: url(assets/ie20years.jpg)
 
 ???
