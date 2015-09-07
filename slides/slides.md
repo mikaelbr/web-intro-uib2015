@@ -721,9 +721,9 @@ JavaScript er dynamisk. Så lister kan være hva som helst
 
 
 ```js
-var listOfNumbers = [5, '4', 3, { x: 3 }, true, [1, 2, 3]];
+var listOfValues = [5, '4', 3, { x: 3 }, true, [1, 2, 3]];
 
-var sum = listOfNumbers
+var sum = listOfValues
   .filter(n => typeof n === 'number')
   .reduce((acc, number) => acc + number);
 sum; //> 8
