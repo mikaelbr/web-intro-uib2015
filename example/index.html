@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gif-machine</title>
+    <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <form action="" method="get" id="search-form">
+      <input type="text" placeholder="Søkestrofe" id="input" />
+      <input type="submit" value="Søk" />
+    </form>
+
+    <main>
+      <h1>jifs!</h1>
+      <section id="content"></section>
+    </main>
+
+    <script>
+    var gifs = [
+      'cat1','cat2','cat3','cat4','cat5','cat6','cat7',
+      'dog1','dog2','dog3','dog4','dog5','dog6',
+      'slow-loris1','slow-loris2','slow-loris3',
+      'hedgehog1','hedgehog2'
+    ];
+
+    document.querySelector('#search-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var filename = document.querySelector('#input').value;
+
+      document.querySelector('#content').innerHTML = '';
+      search(filename);
+    }, false);
+
+    search();
+
+    function search (name) {
+      var content = document.querySelector('#content');
+      gifs.filter(function (file) {
+          return (file.indexOf(name) !== -1 || !name);
+        })
+        .map(function (filename) {
+          return createGif(filename);
+        })
+        .forEach(function (gif) {
+          content.appendChild(gif);
+        });
+    }
+
+    function createGif (filename) {
+      var div = document.createElement('article');
+      var img = document.createElement('img');
+      img.src = './gifs/' + filename + '.gif';
+
+      var text = document.createElement('h2');
+      text.innerText = filename;
+
+      div.appendChild(img);
+      div.appendChild(text);
+
+      return div;
+    }
+    </script>
+  </body>
+</html>

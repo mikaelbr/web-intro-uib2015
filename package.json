@@ -1,0 +1,27 @@
+{
+  "name": "web-intro-ntnu2015",
+  "version": "1.0.0",
+  "description": "Slides Web Intro Preentation NTNU 2015",
+  "main": "index.html",
+  "dependencies": {
+    "myo": "^2.0.1",
+    "remark-bekk": "bekk/remark"
+  },
+  "private": true,
+  "devDependencies": {
+    "brfs": "^1.4.1",
+    "browserify": "^11.0.1",
+    "watch": "^0.16.0"
+  },
+  "scripts": {
+    "build": "browserify src/app.js -o dist/build.js",
+    "watch": "watch 'npm run build' ./slides ./src"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
+  "author": "Mikael Brevik",
+  "license": "MIT"
+}
